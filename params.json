@@ -1,6 +1,0 @@
-{
-  "name": "-vigenere",
-  "tagline": "",
-  "body": "#include <cs50.h>\r\n#include <stdio.h>\r\n#include <ctype.h>\r\n#include <string.h>\r\nint main(int argc, string argv[])\r\n{\r\nif (argc != 2)\r\n{\r\nprintf(\"Try again.\");\r\nreturn 1;\r\n}\r\nstring key = argv[1];\r\nunsigned long keyCount = strlen(key);\r\nfor(int k = 0; k < keyCount; k++) \r\n{\r\nif (!isalpha(key[k]))\r\n{\r\nprintf(\"Try again.\");\r\nreturn 1;\r\n}\r\n}\r\nstring text = GetString();\r\nif(text == NULL) \r\n{\r\nprintf(\"Try again.\");\r\nreturn 1;\r\n}\r\nfor (int i = 0, n = 0; i < strlen(text); i++) \r\n{\r\nif (isalpha(text[i])) \r\n{\r\nif (isupper(text[i]))\r\nprintf(\"%c\", ((((text[i] - 'A') + ((toupper(key[n++%keyCount]))-'A')%26) % 26) + 'A'));\r\nif (islower(text[i]))\r\nprintf(\"%c\", ((((text[i] - 'a') + ((tolower(key[n++%keyCount]))-'a')%26) % 26) + 'a'));\r\n} else\r\nprintf(\"%c\", text[i]);\r\n}\r\nprintf(\"\\n\");\r\n  return 0;\r\n}\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
